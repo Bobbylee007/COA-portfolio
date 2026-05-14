@@ -37,27 +37,7 @@ btnDom.forEach((btn, index) => {
 });
 
 // Slider Logic
-// const btnLeft = document.querySelector(".prev");
-// const btnRight = document.querySelector(".next");
-// const slider = document.querySelector(".slide");
-
-// let slide = 0
-
-// const pushLeft = ()=>{
-//   slider.classList.add("lastSlide")
-//   slider.setProperty("transform", `translateX(${slide - 56}%)`);
-//         slide =slide
-
-// }
-// btnLeft.addEventListener('click',pushLeft)
-
-// setInterval(()=>{
-//   if(slide === 100){
-//     slider.classList.add("lastSlide")
-//     slider.setProperty("transform", `translateX(${slide - 56}%)`);
-//   }
-//    slider.classList.replace("lastSlide", "nextSlide");
-// },1000)
+// using   index to move thing with help of forEach
 
 const slides = document.querySelectorAll(".item-slide");
 const btnLeft = document.querySelector(".prev");

@@ -725,13 +725,15 @@ svg {
         height: 246px;
         display: grid;
         grid-template-columns: repeat(5, 1fr);
+        justify-content:space-evenly;
         place-items: center end;
-        gap: 32px 0px;
+        gap: 8px;
+        margin: auto;
         overflow: hidden;
        
 
         .item-slide {  
-            width: 298px;
+            width: 290px;
             justify-items: center;
             background: var(--clr-container-weak);
             text-align: center;
@@ -739,6 +741,7 @@ svg {
             margin-inline: var(--spc-rg) var(--spc-rg);
             position: absolute;
             transition: transform 0.5s ease-in-out;
+            border: 16px solid var(--clr-background);
 
             img {
                 width: 28px;
@@ -775,14 +778,14 @@ svg {
 .prev{
     position: absolute;
     left: 0%;
-    top: 50px;
+    top: 100px;
 
 }
 
 .next {
     position: absolute;
     left:95%;
-    top: 50px;
+    top: 100px;
     content: right;
 }
 .dots {

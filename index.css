@@ -587,7 +587,7 @@ footer {
     height: 287px;
     display: grid;
     place-items: center;
-    transform: skew(40px,32px);
+    transform: skew(4deg, 0deg);
     background: var(--clr-brand);
     margin-block-end: var(--spc-lg);
     
@@ -693,46 +693,52 @@ svg {
     justify-items: center;
     margin: 0 auto;
     padding: 0 auto;
+    /* stroke: var(--clr-stroke-storng); */
 }
 /*=====SVG-end=====*/
 
 /*=====Caurosel=====*/
 .caurosel{
     position: relative;
-    width: 844;
-    height: 290;
+    width: 890px;
+    height: 290px;
     gap: 32px;
     top: 8px;
     left: 18px;
     justify-items: center;
     margin: 0 auto;
+   
 }
 
 .slider {
-    width: 890px;
+    width: 844px;
+    height: 246opx;
     padding-inline: var(--spc-md) var(--spc-lg);
     gap: 55px;
     margin-bottom: var(--spc-lg);
+    
 
 
     .slide {
-        width: 840px;
-        height: 246;
+        position: relative;
+        width: 702px;
+        height: 246px;
         display: grid;
         grid-template-columns: repeat(5, 1fr);
-        gap: 55px;
+        place-items: center end;
+        gap: 32px 0px;
         overflow: hidden;
-        scroll-snap-type: mandatory;
+       
 
-        .item-slide {
+        .item-slide {  
             width: 298px;
-            height: 246;
             justify-items: center;
-            margin: 0 auto;
-            gap: 4px;
             background: var(--clr-container-weak);
             text-align: center;
             padding-block: var(--spc-rg);
+            margin-inline: var(--spc-rg) var(--spc-rg);
+            position: absolute;
+            transition: transform 0.5s ease-in-out;
 
             img {
                 width: 28px;
@@ -768,7 +774,7 @@ svg {
 
 .prev{
     position: absolute;
-    left: 5%;
+    left: 0%;
     top: 50px;
 
 }
@@ -780,12 +786,19 @@ svg {
     content: right;
 }
 .dots {
+    position: absolute;
     display: flex;
     flex-direction: row;
+    bottom: 5%;
+    right: 47%;
     width: 76;
     height: 12;
     gap: 4px;
-    margin-block: 0 var(--spc-hg);
+    margin-block: 0 var(--spc-md);
+    
+        &.active-dot {
+            background: blue;
+        }
 }
 
 .item-skill {
@@ -797,6 +810,20 @@ svg {
     background: var(--clr-container-weak);
     text-align: center;
     padding-block: var(--spc-rg);
+}
+
+
+.activeSlide {
+    opacity: 1;
+    transform: translateX(0);
+}
+
+.lastSlide {
+    transform: translateX(100%);
+}
+
+.nextSlide {
+    transform: translateX(100%);
 }
 /*=====Caurosel=====*/
 

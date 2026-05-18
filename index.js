@@ -37,7 +37,7 @@ btnDom.forEach((btn, index) => {
 });
 
 // Slider Logic
-// using   index to move thing with help of forEach
+// using  index to move thing with help of forEach
 
 const slides = document.querySelectorAll(".item-slide");
 const btnLeft = document.querySelector(".prev");
@@ -93,4 +93,38 @@ dots.forEach((dot, index) => {
     dot.classList.remove("active-dot");
     dots[index].classList.add("active-dot");
   });
+});
+
+// Slider Logic
+const formField = document.querySelector(".formField");
+const label = document.querySelector("label");
+const inputField = document.querySelectorAll(".inputField");
+const nameField = document.querySelector("#name");
+const emailField = document.querySelector("#email");
+const subjectField = document.querySelector("#subject");
+const messageField = document.querySelector("#message");
+
+const helperText = document.querySelector(".helperText");
+const alertText = document.querySelector(".alertText");
+
+const showAlert = (message, color) => {
+  const text = `<p class=${color}> ${message}</p>`;
+  return document.body.appendChild(text);
+};
+
+subjectField.addEventListener("click", (e) => {
+  e.preventDefault();
+  const name = nameField.value;
+  const email = emailField.value;
+  const subject = subjectField.value;
+  const message = messageField.value;
+
+  if (!name || !email || !subject || !message) {
+    showAlert(
+      (message = "please provide messages and other input"),
+      (color = "warningAlert"),
+    );
+  }
+
+  console.log("trying to send mail");
 });

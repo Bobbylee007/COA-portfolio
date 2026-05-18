@@ -1031,6 +1031,7 @@ svg {
             background-color: transparent;
             width: 393px;
             height: 32px;
+            color: var(--clr-text-light);
             gap: 4px;
             font-size: medium;
             border: 0, 0, 2px, 0;
@@ -1048,12 +1049,16 @@ svg {
             background-color: var(--clr-container-weak);
             position: absolute;
         }
+        & input:focus label{
+            display: none;
+        }
         & textarea{
             position: absolute;
             background-color: transparent;
             width: 393px;
             height: 116px;
-            font-size: medium;
+            font-size: var(--txt-h5-sm);
+            color: var(--clr-text-light);
             outline: none;
             padding: 16px;
             border: none;

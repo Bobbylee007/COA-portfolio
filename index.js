@@ -38,7 +38,6 @@ btnDom.forEach((btn, index) => {
 
 // Slider Logic
 // using  index to move thing with help of forEach
-
 const slides = document.querySelectorAll(".item-slide");
 const btnLeft = document.querySelector(".prev");
 const btnRight = document.querySelector(".next");
@@ -95,36 +94,59 @@ dots.forEach((dot, index) => {
   });
 });
 
-// Slider Logic
+
+
+// Form validation
 const formField = document.querySelector(".formField");
-const label = document.querySelector("label");
-const inputField = document.querySelectorAll(".inputField");
+const labels = document.querySelectorAll(".label");
+const inputFields = document.querySelectorAll(".inputField");
 const nameField = document.querySelector("#name");
 const emailField = document.querySelector("#email");
 const subjectField = document.querySelector("#subject");
 const messageField = document.querySelector("#message");
 
-const helperText = document.querySelector(".helperText");
-const alertText = document.querySelector(".alertText");
+//Remove label
+inputFields.forEach((input, index) => {
+  input.addEventListener("input", () => {
+    if (input.value.trim() !== "") {
+      labels[index].style.display = "none";
+    } else {
+      labels[index].style.display = "block";
+    }
+  });
+});
 
-const showAlert = (message, color) => {
-  const text = `<p class=${color}> ${message}</p>`;
-  return document.body.appendChild(text);
+// Display Alert
+const showAlert = (message, title, color) => {
+  let text = document.createElement("div");
+  text.innerHTML = `
+      <div class="${color}">
+        <h5>${title}</h5>
+        <p>${message}</p>
+  </div> `;
+  document.body.append(text);
+  return setTimeout(() => text.remove(), 2000);
 };
 
-subjectField.addEventListener("click", (e) => {
-  e.preventDefault();
-  const name = nameField.value;
-  const email = emailField.value;
-  const subject = subjectField.value;
-  const message = messageField.value;
+//Download
+const cvButton = document.querySelectorAll(".btn-cv");
+cvButton.forEach((btn) => {
+  btn.addEventListener("click", () => {
+    showAlert("CV Downloaded successfully", "Success", "successAlert");
+  });
+});
 
+//form vallidation
+formField.addEventListener("submit", (e) => {
+  const name = nameField.value.trim();
+  const email = emailField.value.trim();
+  const subject = subjectField.value.trim();
+  const message = messageField.value.trim();
+  
   if (!name || !email || !subject || !message) {
-    showAlert(
-      (message = "please provide messages and other input"),
-      (color = "warningAlert"),
-    );
+    e.preventDefault();
+    showAlert("Please provide all inputs", "Validation Error", "errorAlert");
+    return;
   }
-
-  console.log("trying to send mail");
+  showAlert("Sending message...", "Success", "successAlert");
 });

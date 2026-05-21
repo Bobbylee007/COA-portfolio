@@ -21,12 +21,13 @@
                     <div class="logo">
                         <a href="#"><img src="assert/icons/logo/coa-light.svg" alt="logo" class="coa-logo"></a>
                     </div>
-
                     <div class="menu"><svg class="svg-logo">
                             <use href="/assert/icons/normal/menu.svg"></use>
                         </svg>
                     </div>
                 </div>
+
+
                 <div class="navs">
                     <ul class="nav-links">
                         <li class="nav-link"><a href="#home">home</a></li>
@@ -36,16 +37,18 @@
                         <li class="nav-link"><a href="#jobs">jobs</a></li>
                         <li class="nav-link"><a href="#contacts">contacts</a></li>
                     </ul>
-                </div>
-                <div class="btn-nav">
-                    <button class="btn btn-primary  btn-cv" title="Download Resurme"><a
-                            href="./assert/docs/AUGUSTINE CHUKWUFUMNAYA OSAMOR-CV.pdf" Download>
-                            <svg class="svg-logo">
-                                <use href="/assert/icons/normal/file.svg"></use>
-                            </svg>
-                            <p class="btn-text">Resurme</p>
-                        </a>
-                    </button>
+
+                    <div class="btn-nav">
+                        <button class="btn btn-primary  btn-cv" title="Download Resurme"><a
+                                href="./assert/docs/AUGUSTINE CHUKWUFUMNAYA OSAMOR-CV.pdf" Download>
+                                <svg class="svg-logo">
+                                    <use href="/assert/icons/normal/file.svg"></use>
+                                </svg>
+                                <p class="btn-text">Resurme</p>
+                            </a>
+                        </button>
+                    </div>
+
                 </div>
             </nav>
             <!-- nav-end -->
@@ -94,10 +97,8 @@
             <section class="container">
                 <article class="heros">
                     <div class="hero-text">
-                        <div class="text items-inline">
-                            <h3>Hi,</h3><span>i'm</span>
-                        </div>
-                        <h1 class="text">Chukwufumnaya Augustine Osamor</h1>
+                            <h3>Hi,<span>i'm</span></h3>
+                         <h1 class="text">Chukwufumnaya Augustine Osamor</h1>
                         <h2 class="title">Developer + Designer</h2>
                         <div class="text">
                             <p>Enthusiastic and motivated self-learning in Information Technology. Interested in
@@ -130,6 +131,11 @@
                     </div>
 
                     <article class="hero-profile">
+                        <img src="./assert/images/profile/figma.png"  class="figma" alt="figma">
+                        <img src="./assert/images/profile/mongos.png"  class="mongos"alt="mongos">
+                        <img src="./assert/images/profile/react.png" class="react" alt="react">
+                        <img src="./assert/images/profile/node.png" class="node" alt="node">
+
                         <div class="hero-img">
                             <img src="/assert/images/profile/COA-ps21.png" alt="">
                         </div>
@@ -1171,7 +1177,7 @@
                                 <label for="message" class="label">Message:</label>
                                 <textarea name="message" id="message" class="inputField" ></textarea>
                             </div>
-                            <button type="submit" class="submitField btn btn-primary items-inline">
+                            <button type="submit" class="submitField btn btn-primary">
                                 <svg class="svg-logo ">
                                     <use href="/assert/icons/normal/mail.svg"></use>
                                 </svg>
@@ -1183,62 +1189,57 @@
             </div>
         </section>
 
-        <footer class="">
-
-            <div class="">
-                <div class="item-logo items-inline">
-                    <div class="socials">
-                        <div class="coa-logo">
-                            <a href="#">
-                                <svg>
-                                    <use href="/assert/icons/logo/coa-dark.svg"></use>
-                                </svg>
-                            </a>
-
-                        </div>
-                        <div class="">
-                            <a href="">
-                                <svg>
-                                    <use href="/assert/icons/socials/whatsapp.svg"></use>
-                                </svg>
-                            </a>
-                            <a href="">
-                                <svg>
-                                    <use href="/assert/icons/socials/linkedin.svg"></use>
-                                </svg>
-                            </a>
-                            <a href="">
-                                <svg>
-                                    <use href="/assert/icons/socials/facebook.svg"></use>
-                                </svg>
-                            </a>
-                            <a href="">
-                                <svg>
-                                    <use href="/assert/icons/socials/X.svg"></use>
-                                </svg>
-                            </a>
-                            <a href="">
-                                <svg>
-                                    <use href="/assert/icons/socials/instagram.svg"></use>
-                                </svg>
-                            </a>
-                        </div>
+        <footer>
+            <div class="item-logo items-inline">
+                <div class="socials">
+                    <div class="coa-logo">
+                        <a href="#">
+                            <svg>
+                                <use href="/assert/icons/logo/coa-dark.svg"></use>
+                            </svg>
+                        </a>
+        
                     </div>
-                    <div class="logo-x">
-                        <svg>
-                            <use href="/assert/icons/logo/xzegon-white.svg"></use>
-                        </svg>
-                        <p class="caption">Powered By Xzegon tech concepts</p>
+                    <div class="">
+                        <a href="">
+                            <svg>
+                                <use href="/assert/icons/socials/whatsapp.svg"></use>
+                            </svg>
+                        </a>
+                        <a href="">
+                            <svg>
+                                <use href="/assert/icons/socials/linkedin.svg"></use>
+                            </svg>
+                        </a>
+                        <a href="">
+                            <svg>
+                                <use href="/assert/icons/socials/facebook.svg"></use>
+                            </svg>
+                        </a>
+                        <a href="">
+                            <svg>
+                                <use href="/assert/icons/socials/X.svg"></use>
+                            </svg>
+                        </a>
+                        <a href="">
+                            <svg>
+                                <use href="/assert/icons/socials/instagram.svg"></use>
+                            </svg>
+                        </a>
                     </div>
                 </div>
-
+                <div class="logo-x">
+                    <svg>
+                        <use href="/assert/icons/logo/xzegon-white.svg"></use>
+                    </svg>
+                    <p class="caption">Powered By Xzegon tech concepts</p>
+                </div>
             </div>
-
-
-            <div class="">
+        
+            <div>
                 <p class="caption">since 2023 COA Portfolio. All Right Reserved</p>
             </div>
-
+        
         </footer>
     </div>
 </body>

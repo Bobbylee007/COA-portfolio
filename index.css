@@ -1442,7 +1442,7 @@ svg {
         .nav-links {
             width:100dvw;
             background-color: var(--clr-background);
-            display: block;
+            display: block;  
         }
     }
     /*======= nav menu End======*/

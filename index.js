@@ -19,6 +19,41 @@ toggleIcon?.addEventListener("click", () => {
   darkMode = !darkMode;
 });
 
+// Toggle menu
+const menuBtn = document.querySelector(".menu");
+const menuIcon = document.querySelector(".menuIcon");
+const navBar = document.querySelector(".nav-bar");
+const navs = document.querySelector(".navs");
+const navLink = document.querySelectorAll(".nav-link");
+
+let menuToggle = false;
+
+menuBtn.addEventListener("click", () => {
+  menuToggle
+    ? menuIcon.setAttribute("href", "./assert/icons/normal/menu.svg")
+    : menuIcon.setAttribute("href", "./assert/icons/normal/cancel.svg");
+
+  menuToggle ? (navs.style.display = "none") : (navs.style.display = "block");
+
+  menuToggle
+    ? (navBar.style.borderBlockEnd = "2px solid var(--clr-brand)")
+    : (navBar.style.border = "none");
+  menuToggle = !menuToggle;
+});
+
+navLink.forEach((link) => {
+  link.addEventListener("click", () => {
+    menuToggle ? (navs.style.display = "none") : (navs.style.display = "block");
+
+     menuToggle
+       ? menuIcon.setAttribute("href", "./assert/icons/normal/menu.svg")
+       : menuIcon.setAttribute("href", "./assert/icons/normal/cancel.svg");
+
+
+    menuToggle = !menuToggle;
+  });
+});
+
 // toggle-button Logic
 const btnExpand = document.querySelectorAll(".content-expand");
 const btnDom = document.querySelectorAll(".btnDom");
@@ -94,8 +129,6 @@ dots.forEach((dot, index) => {
   });
 });
 
-
-
 // Form validation
 const formField = document.querySelector(".formField");
 const labels = document.querySelectorAll(".label");
@@ -142,7 +175,7 @@ formField.addEventListener("submit", (e) => {
   const email = emailField.value.trim();
   const subject = subjectField.value.trim();
   const message = messageField.value.trim();
-  
+
   if (!name || !email || !subject || !message) {
     e.preventDefault();
     showAlert("Please provide all inputs", "Validation Error", "errorAlert");

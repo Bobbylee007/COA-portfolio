@@ -113,7 +113,7 @@
     --max-width: 1200px;
     --fixed-width: 1072px;
     --min-width: 360px;
-    --extra-small-width:
+    --extra-small-width:340px
 }
 
 /* NB: use JS to add a class to the body tag <dark> */
@@ -1151,7 +1151,7 @@ svg {
     }
 
 .formField {
-    width: 393px;
+    width: var(--min-width);
     height: 444px;
     display: grid;
     grid-auto-rows: auto;
@@ -1214,8 +1214,8 @@ svg {
         & textarea {
             position: absolute;
             background-color: transparent;
-            width: 393px;
-            height: 116px;
+            width: 382px;
+            height: 105px;
             font-size: var(--txt-h5-sm);
             color: var(--clr-text-light);
             outline: none;
@@ -1225,8 +1225,8 @@ svg {
         }
 
         &:has(textarea) {
-            width: 393px;
-            height: 116px;
+            width: 385px;
+            height: 105px;
             border: 2px solid var(--clr-brand);
             outline: none;
         }
@@ -1247,7 +1247,6 @@ svg {
         }
 
         &:has(textarea):focus {
-            width: 393px;
             height: 116px;
             background-color: var(--clr-container-weak);
             border-style: none;
@@ -1337,11 +1336,13 @@ svg {
 /*===== Alerts End=====*/
 
 /*====================  Responsiveness ==================*/
-@media screen and (max-width: 460px) {
+@media screen and (max-width: 680px) {
 
-    body {
+  html,body {
         width: 100dvw;
         height: auto;
+        max-width: 100%;
+        overflow-x: hidden;
         .main-wrapper {
             position: relative;
             width: 100dvw;
@@ -1359,7 +1360,7 @@ svg {
         place-items: center;
     }
     main{
-        width: 90dvw;
+        width: 100dvw;
         height: auto;
         display: grid;
         place-items: center;
@@ -1429,7 +1430,6 @@ svg {
         cursor: pointer;
 
     }
-
     .navs {
         width: 100dvw;
         background-color: var(--clr-background);
@@ -1445,6 +1445,37 @@ svg {
             display: block;  
         }
     }
+        navs.showNav {
+            width: 100dvw;
+            background-color: var(--clr-background);
+            display: block;
+            padding-block: var(--spc-rg);
+            border-block-end: 2px solid var(--clr-brand);
+            z-index: 2;
+    
+    
+            .nav-links {
+                width: 100dvw;
+                background-color: var(--clr-background);
+                display: block;
+            }
+        }
+
+       .navs.hideNav {
+            width: 100dvw;
+            background-color: var(--clr-background);
+            display: none;
+            padding-block: var(--spc-rg);
+            border-block-end: 2px solid var(--clr-brand);
+            z-index: 2;
+
+
+            .nav-links {
+                width: 100dvw;
+                background-color: var(--clr-background);
+                display: block;
+            }
+        }
     /*======= nav menu End======*/
 
     /*======= footer ======*/
@@ -1464,7 +1495,7 @@ svg {
         }
 
         .item-logo {
-            width: 100%;
+            width: 260px;
             height: 194px;
             display: block;
         }
@@ -1482,13 +1513,13 @@ svg {
         }
 
         .logo-x {
-            width: 300px;
+            width: 260px;
             height: 81px;
             display: block;
             padding-left: 8px;
            
             svg {
-                width: 296px;
+                /* width: 296px; */
                 margin-block: var(--spc-sm);
             }
             p {
@@ -1506,31 +1537,34 @@ svg {
     /*======= footer End ======*/
     /*===== containers ====*/
     .container {
-        width: 360px;;
+        width: 100dvw;
+        max-width: 100%;
         display: grid;
         grid-template-rows: auto;
-        justify-content: space-between;
         place-items: center;
-        padding-inline: 24px;
-        padding-block: 32px;
-        gap: 32px;
+        padding-inline: 4px 24px;
+        padding-block: 32px 32px;
+        
     }
 
     .content {
-        width: var(--min-width);
+        width: 100dvw;
+        max-width: 100%;
         height: auto;
         display: grid;
-        place-items: start;
+        place-items: center;
         gap: 32px;
 
     }
 
     .content-expand {
-        width: var(--min-width);
+        width: 100dvw;
+        max-width: 100%;
+        display: grid;
+        place-items: center;
         height: auto;
         margin-block: var(--spc-rg);
-        padding-inline: var(--spc-md) var(--spc-md);
-        padding-block: var(--spc-md);
+       
     }
 
     .skill-cards {
@@ -1564,7 +1598,7 @@ svg {
     }
 
     .contact-item {
-        width: var(--min-width);
+        width: var(--extra-small-width);
     }
     /*===== containers End====*/
 
@@ -1802,12 +1836,12 @@ svg {
 .cards {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
-    gap: 16px;
+    /* gap: 16px; */
     margin-block: var(--spc-lg);
 }
 
 .card {
-    width: 340px;
+    /* width: 340px; */
     background-color: var(--clr-container-weak);
     padding-block: var(--spc-md);
     padding-inline: var(--spc-rg) var(--spc-rg);
@@ -1927,7 +1961,7 @@ svg {
 }
 
 .bios {
-    width: 90%;
+    /* width: 90%; */
     display: grid;
     grid-template-columns: 1fr 1fr;
     place-items: center end;
@@ -2027,26 +2061,105 @@ svg {
     .contact-field {
         width: 312px;
 
-        .formField {
-            width: 300px;
-            padding: var(--spc-rg);
-
-            & .formControl {
+        & .formControl {
+                position: relative;
                 width: 300px;
+                height: 27px;
+                display: grid;
+                grid-auto-rows: auto;
+                gap: 8px;
+                border-bottom: 2px solid var(--clr-brand);
+                padding: 8px;
+        
+                & label {
+                    position: absolute;
+                    top: 0px;
+                    padding-inline: var(--spc-rg);
+                }
+        
+                & input {
+                    position: absolute;
+                    background-color: transparent;
+                    width: 300px;
+                    height: 32px;
+                    color: var(--clr-text-light);
+                    gap: 4px;
+                    font-size: medium;
+                    border: 0, 0, 2px, 0;
+                    outline: none;
+                    border-style: none;
+                    padding-left: var(--spc-sm);
+                }
+        
+        
+                & input:active {
+                    position: absolute;
+                    background-color: var(--clr-container-weak);
+                    border-color: var(--clr-container-weak);
+                }
+        
+                & input:focus {
+                    border-color: var(--clr-container-weak);
+                    background-color: var(--clr-container-weak);
+                    position: absolute;
+                }
+        
+                .inputField:focus+.label,
+                .inputField:not(:placeholder-shown)+.label {
+                    opacity: 0;
+                }
+        
+                & input:focus label {
+                    display: none;
+                    opacity: 0;
+                }
+        
+                & textarea {
+                    position: absolute;
+                    background-color: transparent;
+                    width: 300px;
+                    height: 105px;
+                    font-size: var(--txt-h5-sm);
+                    color: var(--clr-text-light);
+                    outline: none;
+                    padding: 16px;
+                    border: none;
+        
+                }
+        
+                &:has(textarea) {
+                    width: 300px;
+                    height: 105px;
+                    border: 2px solid var(--clr-brand);
+                    outline: none;
+                }
+        
+                & textarea:active {
+                    position: absolute;
+                    background-color: var(--clr-container-weak);
+                    padding: 16px;
+                    border-style: none;
+                }
+        
+                & textarea:focus {
+                    width: 300px;
+                    position: absolute;
+                    background-color: var(--clr-container-weak);
+                    padding: 16px;
+                    border-style: none;
+                    outline: none;
+                }        
             }
-
-            .btn {
-                width: 300px;
-            }
-        }
     }
     /*==== Form End====*/
-        /*===== Alerts =====*/
+
+
+    /*===== Alerts =====*/
         .warningAlert {
             position: fixed;
             left: 16dvw;
             top: 15vh;
-            width: 280px;
+            width: 300px;
             height: 64px;
             background-color: var(--clr-warning-light);
             padding: var(--spc-rg) var(--spc-md);
@@ -2099,5 +2212,5 @@ svg {
             }
         }
     
-        /*===== Alerts End=====*/
+     /*===== Alerts End=====*/
 }

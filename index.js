@@ -25,32 +25,35 @@ const menuIcon = document.querySelector(".menuIcon");
 const navBar = document.querySelector(".nav-bar");
 const navs = document.querySelector(".navs");
 const navLink = document.querySelectorAll(".nav-link");
+const showNav = document.querySelector(".showNav");
+const hideNav = document.querySelector(".hideNav");
+
 
 let menuToggle = false;
+const mobileScreen = window.matchMedia("(max-width: 460px)");
 
 menuBtn.addEventListener("click", () => {
-  menuToggle
-    ? menuIcon.setAttribute("href", "./assert/icons/normal/menu.svg")
-    : menuIcon.setAttribute("href", "./assert/icons/normal/cancel.svg");
+  if (mobileScreen.matches) {
+    menuToggle
+      ? menuIcon.setAttribute("href", "./assert/icons/normal/menu.svg")
+      : menuIcon.setAttribute("href", "./assert/icons/normal/cancel.svg");
 
-  menuToggle ? (navs.style.display = "none") : (navs.style.display = "block");
+    menuToggle
+      ? (navs.style.display = "none")
+      : (navs.style.display = "block");
 
-  menuToggle
-    ? (navBar.style.borderBlockEnd = "2px solid var(--clr-brand)")
-    : (navBar.style.border = "none");
-  menuToggle = !menuToggle;
+    menuToggle
+      ? (navBar.style.borderBlockEnd = "2px solid var(--clr-brand)")
+      : (navBar.style.border = "none");
+    menuToggle = !menuToggle;
+  }
 });
 
 navLink.forEach((link) => {
   link.addEventListener("click", () => {
-    menuToggle ? (navs.style.display = "none") : (navs.style.display = "block");
-
-     menuToggle
-       ? menuIcon.setAttribute("href", "./assert/icons/normal/menu.svg")
-       : menuIcon.setAttribute("href", "./assert/icons/normal/cancel.svg");
-
-
-    menuToggle = !menuToggle;
+    if (mobileScreen) {
+      navs.style.display = "none";
+    }
   });
 });
 

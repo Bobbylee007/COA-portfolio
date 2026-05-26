@@ -1354,6 +1354,7 @@ svg {
     .main-header {
         position: relative;
         width: 100dvw;
+        max-width: 100%;
         height: auto;
         display: grid;
         gap: var(--spc-md);
@@ -1676,11 +1677,12 @@ svg {
 
     /*==Theme-toggle End==*/
     .heros {
-        width: 312px;
+        width:var(--min-width);
         height: auto;
         display: block;
+        place-items: center;
         padding-block: var(--spc-rg) var(--spc-rg);
-        padding-inline: var(--spc-sm) var(--spc-sm);
+        padding-inline: var(--spc-xxxl) var(--spc-lg);
     }
 
     .hero-text {

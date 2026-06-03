@@ -6,7 +6,7 @@ const coaLogo = document.querySelector(".coa-logo");
 
 let darkMode = false;
 
-toggleIcon?.addEventListener("click", () => {
+toggleBtn?.addEventListener("click", () => {
   document.documentElement.classList.toggle("dark-theme");
   darkMode
     ? switchIcon.setAttribute("href", "/assert/icons/normal/moon.svg")
@@ -22,38 +22,32 @@ toggleIcon?.addEventListener("click", () => {
 // Toggle menu
 const menuBtn = document.querySelector(".menu");
 const menuIcon = document.querySelector(".menuIcon");
-const navBar = document.querySelector(".nav-bar");
+// const navBar = document.querySelector(".nav-bar"); not needed
 const navs = document.querySelector(".navs");
 const navLink = document.querySelectorAll(".nav-link");
 const showNav = document.querySelector(".showNav");
 const hideNav = document.querySelector(".hideNav");
 
-
-let menuToggle = false;
-const mobileScreen = window.matchMedia("(max-width: 460px)");
-
 menuBtn.addEventListener("click", () => {
-  if (mobileScreen.matches) {
-    menuToggle
-      ? menuIcon.setAttribute("href", "./assert/icons/normal/menu.svg")
-      : menuIcon.setAttribute("href", "./assert/icons/normal/cancel.svg");
+  navs.classList.toggle("showNav");
+  const isOpen = navs.classList.contains("showNav");
+  menuIcon.setAttribute(
+    "href",
+    isOpen
+      ? "./assert/icons/normal/cancel.svg"
+      : "./assert/icons/normal/menu.svg",
+  );
 
-    menuToggle
-      ? (navs.style.display = "none")
-      : (navs.style.display = "block");
-
-    menuToggle
-      ? (navBar.style.borderBlockEnd = "2px solid var(--clr-brand)")
-      : (navBar.style.border = "none");
-    menuToggle = !menuToggle;
-  }
+  navBar.classList.toggle("navBorder");
 });
 
 navLink.forEach((link) => {
   link.addEventListener("click", () => {
-    if (mobileScreen) {
-      navs.style.display = "none";
-    }
+    navs.classList.remove("showNav");
+
+    menuIcon.setAttribute("href", "./assert/icons/normal/menu.svg");
+
+    navBar.classList.remove("navBorder");
   });
 });
 
@@ -65,11 +59,11 @@ let toggleValue = false;
 btnDom.forEach((btn, index) => {
   btn.addEventListener("click", () => {
     toggleValue
-      ? (btnExpand[index].style.display = "grid")
-      : (btnExpand[index].style.display = "none");
+      ? (btnExpand[index].style.display = "none")
+      : (btnExpand[index].style.display = "grid");
     toggleValue
-      ? (btn.textContent = "view less")
-      : (btn.textContent = "view more");
+      ? (btn.textContent = "view more")
+      : (btn.textContent = "view less");
     toggleValue = !toggleValue;
   });
 });
@@ -134,7 +128,7 @@ dots.forEach((dot, index) => {
 
 // Form validation
 const formField = document.querySelector(".formField");
-const labels = document.querySelectorAll(".label");
+const labels = document.querySelectorAll(".text-label");
 const inputFields = document.querySelectorAll(".inputField");
 const nameField = document.querySelector("#name");
 const emailField = document.querySelector("#email");
@@ -186,3 +180,11 @@ formField.addEventListener("submit", (e) => {
   }
   showAlert("Sending message...", "Success", "successAlert");
 });
+
+
+// display overlow element
+// document.querySelectorAll("*").forEach((el) => {
+//   if (el.offsetWidth > document.documentElement.clientWidth) {
+//     console.log("Culprit element causing overflow:", el);
+//   }
+// });

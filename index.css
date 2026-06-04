@@ -81,8 +81,8 @@
     --txt-body3: 0.75rem;
     --txt-caption: 0.625rem;
 
-    --txt-h1-sm: 2.25rem;
-    --txt-title-sm: 1.75rem;
+    --txt-h1-sm: 2.75rem;
+    --txt-title-sm: 1.75 rem;
     --txt-subtitle-sm: 1.25rem;
     --txt-h3-sm: 1.25rem;
     --txt-h5-sm: 1.125rem;
@@ -216,7 +216,7 @@ h5 {
 
 /*Typographyt Size*/
 h1 {
-    font-size: clamp(var(--txt-h1-sm), 5vw,var(--txt-h1) );
+    font-size: clamp(var(--txt-h1-sm), 4vw,var(--txt-h1) );
     color: var(--clr-text-strong);
 }
 
@@ -227,23 +227,23 @@ h2.title {
 }
 
 h2.subtitle {
-    font-size: clamp(var(--txt-subtitle), 4vw, var(--txt-subtitle-sm));
+    font-size: clamp(var(--txt-subtitle-sm), 4vw, var(--txt-subtitle));
     color: var(--clr-text-light);
 }
 
 h3 {
-    font-size: clamp(var(--txt-h3), 4vw, var(--txt-h3-sm));
+    font-size: clamp(var(--txt-h3-sm), 4vw, var(--txt-h3));
     color: var(--clr-text-light);
 }
 
 h5 {
-    font-size: clamp(var(--txt-h5), 4vw, var(--txt-h5-sm));
+    font-size: clamp(var(--txt-h5-sm), 4vw, var(--txt-h5));
     color: var(--clr-text-light);
 }
 
 p {
     font-family: var(--font-base);
-    font-size: clamp(var(--txt-base), 4vw, var(--txt-body3-sm));
+    font-size: clamp(var(--txt-base-sm), 4vw, var(--txt-body3));
     line-height: 1.5;
     letter-spacing: 0%;
     color: var(--clr-text-weak);

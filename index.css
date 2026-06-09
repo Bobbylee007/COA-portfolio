@@ -10,6 +10,7 @@
     margin: 0;
     box-sizing: border-box;
     transition: all 0.4s linear;
+    /* outline: 1px solid red; */
 }
 
 /*=================Global varaibles======================*/
@@ -170,7 +171,7 @@
 
 /*=================  Global Style  ====================== */
 html {
-    overflow-x: clip;
+    /* overflow-x: clip; */
 }
 body {
     position: relative;
@@ -193,7 +194,7 @@ body {
     position: relative;
 } */
 
-.main {
+.main-header {
     width: 100%;
     max-width: 90%;
 }
@@ -216,7 +217,7 @@ h5 {
 
 /*Typographyt Size*/
 h1 {
-    font-size: clamp(var(--txt-h1-sm), 4vw,var(--txt-h1) );
+    font-size: clamp(var(--txt-h1-sm), 4vw, var(--txt-h1) );
     color: var(--clr-text-strong);
 }
 
@@ -286,7 +287,7 @@ img {
     background: var(--clr-background);
     padding-inline: var(--spc-xxl);
     padding-block: var(--spc-lg) var(--spc-lg);
-    margin-inline: auto;
+    /* margin-inline: auto; */
 }
 
 .content {
@@ -945,7 +946,7 @@ img {
 
 .card-projects {
     width: 100%;
-    max-width: 340px;
+    max-width: var(--extra-small-width);
     background-color: var(--clr-container-weak);
     padding-block: var(--spc-md);
     padding-inline: var(--spc-rg) var(--spc-rg);
@@ -1361,7 +1362,7 @@ img {
             height: auto;
             /* quick fix for horizontal scrolling */
             max-width: 100%;
-            overflow-x: hidden;
+            /* overflow-x: hidden; */
 
         }
     

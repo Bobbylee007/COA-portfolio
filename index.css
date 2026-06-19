@@ -170,10 +170,11 @@
 /*=================Global varaibles End======================*/
 
 /*=================  Global Style  ====================== */
-html {
-    /* overflow-x: clip; */
-}
-body {
+/* html {
+    overflow-x: clip;
+} */
+body {display: grid;
+    place-items: center;
     position: relative;
     font-family: var(--font-base);
     background: var(--clr-background);
@@ -194,10 +195,6 @@ body {
     position: relative;
 } */
 
-.main-header {
-    width: 100%;
-    max-width: 90%;
-}
 
 /*Typography*/
 h1,
@@ -287,7 +284,7 @@ img {
     background: var(--clr-background);
     padding-inline: var(--spc-xxl);
     padding-block: var(--spc-lg) var(--spc-lg);
-    /* margin-inline: auto; */
+    margin-inline: auto;
 }
 
 .content {
@@ -346,7 +343,7 @@ img {
 .grid-content-3 {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    gap: 2rem;
+    gap: 1rem;
 }
 
 .flex-contentInline{
@@ -376,6 +373,7 @@ img {
 .space-mI-lg {
     margin-inline: var(--spc-lg);
 }
+
 
 .space-pI-sm {
     padding-inline: var(--spc-sm);
@@ -505,50 +503,44 @@ img {
 /*header*/
 .main-header {
     width: 100%;
-    /* max-width: var(--max-width); */
+    max-width: var(--max-width);
 }
 
 /*nav*/
 .nav-bar {
     width: 100%;
-    margin-block: 0 var(--spc-hg);
-}
-
-.menu {
-    display: none;
-}
-
-.nav-bar {
-    width: var(--max-width);
+    height: auto;
     display: grid;
     grid-template-columns: 230px 1fr;
-    gap: 96px;
+    gap: 160px;
     background-color: var(--clr-background);
-    padding-inline: var(--spc-xxl);
-    padding-block: var(--spc-sm);
+    padding-inline: var(--spc-lg);
+    padding-block: var(--spc-rg);
     position: fixed;
     top: 0;
     z-index: 100;
     animation: change-border linear;
     animation-timeline: scroll();
-
-
+    
+    
     .bar-menu {
         width: 160px;
     }
-
+    
     .logo {
         width: 155px;
     }
+}
+.menu {
+    display: none;
 }
 
 .navs {
     /* width: 100%; */
     display: grid;
     grid-template-columns: repeat(2, 1fr);
-    place-content: start start;
     place-items: center;
-    gap: 96px;
+    gap:200px;
 
 }
 
@@ -593,6 +585,7 @@ img {
 
 .btn-nav {
     width: 100%;
+    max-width: 204px;
 
     button {
         & a {
@@ -676,6 +669,7 @@ img {
     max-width: 482px;
     height: 768px;
     margin-bottom: 2px;
+    margin-inline-end: 96px;
 }
 .hero-text{
     width: 100%;
@@ -695,7 +689,9 @@ img {
     margin-block-end: var(--spc-lg);
 
 }
-
+.grid-content-2.hero-btn{
+    gap: 0.5rem;
+}
 .code-me img {
     width: 368px;
     height: 209px;
@@ -948,14 +944,17 @@ img {
     width: 100%;
     max-width: var(--extra-small-width);
     background-color: var(--clr-container-weak);
-    padding-block: var(--spc-md);
+    padding-block: var(--spc-rg);
     padding-inline: var(--spc-rg) var(--spc-rg);
     display: grid;
     grid-template-rows: subgrid;
     grid-row: span 4;
-    gap: 32px;
+    gap: 16px;
 
-    &.card-text {
+    .card-img{
+        max-width: 308px;
+    }
+    .card-text {
         width: 100%;
         max-width: 308px;
         height: 148px;
@@ -1126,7 +1125,7 @@ img {
 .formControl {
     position: relative;
     width: 100%;
-    max-width: 390px;
+    max-width: 350px;
     height: 27px;
     display: grid;
     grid-auto-rows: auto;
@@ -1459,14 +1458,14 @@ main {
     max-width: var(--min-width);
     background: var(--clr-background);
     display: grid;
-    place-items: center;
-    padding-inline: var(--spc-md) var(--spc-md);
+    place-items: start;
+    padding-inline: var(--spc-sm) var(--spc-sm);
     padding-block: var(--spc-md) var(--spc-md);
     margin-inline: auto;
 }
 .content {
     display: grid;
-    place-items: center;
+    place-items: start;
     max-width: var(--extra-small-width);
     margin-inline: auto;
     padding-inline: auto;
@@ -1477,7 +1476,7 @@ main {
     /* margin-inline: auto; */
 }
   .underline {
-      width: 312px;
+      width: 346px;
       height: 0.5px;
       background: var(--clr-brand);
       margin-block: var(--spc-rg);
@@ -1778,7 +1777,7 @@ main {
     }
 }
 .formControl{
-    max-width: 315px;
+    max-width: 350px;
     margin-block-end: var(--spc-rg);
 }
 .submitField{
@@ -1866,8 +1865,5 @@ main {
     }
 
 }
-
-
-
 
 }

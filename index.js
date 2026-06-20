@@ -21,8 +21,8 @@ toggleBtn?.addEventListener("click", () => {
 
 // Toggle menu
 const menuBtn = document.querySelector(".menu");
-const menuIcon = document.querySelector(".menuIcon");
-// const navBar = document.querySelector(".nav-bar"); not needed
+// const menuIcon = document.querySelector(".menuIcon"); no icon used her not needed
+const navBar = document.querySelector(".nav-bar"); 
 const navs = document.querySelector(".navs");
 const navLink = document.querySelectorAll(".nav-link");
 const showNav = document.querySelector(".showNav");
@@ -31,23 +31,25 @@ const hideNav = document.querySelector(".hideNav");
 menuBtn.addEventListener("click", () => {
   navs.classList.toggle("showNav");
   const isOpen = navs.classList.contains("showNav");
-  menuIcon.setAttribute(
-    "href",
-    isOpen
-      ? "./assert/icons/normal/cancel.svg"
-      : "./assert/icons/normal/menu.svg",
-  );
-
+  // menuIcon.setAttribute(
+  //   "href",
+  //   isOpen
+  //     ? "./assert/icons/normal/cancel.svg"
+  //     : "./assert/icons/normal/menu.svg",
+  // );
   navBar.classList.toggle("navBorder");
+  navBar.classList.toggle("active");
+  //  isOpen ? navBar.classList.add("active") : navBar.classList.remove("active");
+
 });
 
 navLink.forEach((link) => {
   link.addEventListener("click", () => {
     navs.classList.remove("showNav");
-
     menuIcon.setAttribute("href", "./assert/icons/normal/menu.svg");
+    navBar.classList.remove("navBorder"); 
+   navBar.classList.remove("active"); 
 
-    navBar.classList.remove("navBorder");
   });
 });
 
@@ -183,8 +185,8 @@ formField.addEventListener("submit", (e) => {
 
 
 // display overlow element
-// document.querySelectorAll("*").forEach((el) => {
-//   if (el.offsetWidth > document.documentElement.clientWidth) {
-//     console.log("Culprit element causing overflow:", el);
-//   }
-// });
+document.querySelectorAll("*").forEach((el) => {
+  if (el.offsetWidth > document.documentElement.clientWidth) {
+    console.log("Culprit element causing overflow:", el);
+  }
+});

@@ -202,7 +202,7 @@ h2,
 .subtile,
 h3,
 h5 {
-    letter-spacing: 0.085rem;
+    letter-spacing: 0.005rem;
     text-transform: capitalize;
     line-height: 1.25;
     text-align: start;
@@ -1063,7 +1063,7 @@ img {
 .profile-text{
     width: 100%;
     max-width: 800px;
-    text-align: justify;
+    text-align: start;
     margin-block-end: var(--spc-lg);        
         span {
             text-transform: capitalize;

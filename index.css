@@ -173,7 +173,8 @@
 /* html {
     overflow-x: clip;
 } */
-body {display: grid;
+body {
+    display: grid;
     place-items: center;
     position: relative;
     font-family: var(--font-base);
@@ -181,8 +182,6 @@ body {display: grid;
     color: var(--clr-text-strong);
     line-height: 1.5;
     font-size: var(--txt-base);
-    display: grid;
-    place-items: center;
 }
 /* 
 .main-wrapper {
@@ -394,7 +393,6 @@ img {
 .space-pb-lg {
     padding-block: var(--spc-lg);
 }
-
 /* === utility/classes End === */
 /*=================  Global Style End  ====================== */
 
@@ -956,7 +954,7 @@ img {
         max-width: 308px;
         height: 148px;
         gap: 8px;
-        margin-block: var(--spc-rg);
+        margin-block: var(--spc-lg);
         margin-inline: var(--spc-sm);
     }
     .card-icon {
@@ -1525,10 +1523,10 @@ main {
     height: auto;
     display: block;
 
-    & .text-text{
+    & .text-article{
      width: 100%;
-        max-width: 312px;
-        height: 382px;
+    max-width: 312px;
+    height: 382px;
     }
 
 

@@ -971,6 +971,13 @@ img {
         padding-bottom: var(--spc-sm);
         gap: 8px;
         margin-block: var(--spc-sm);
+
+        & a{
+            color: var(--clr-brand);
+        }
+        & .cta-a{
+            color: var(--clr-background);
+        }
     }
 }
 
@@ -1769,7 +1776,7 @@ main {
     & .btn {
         max-width: var(--min-width);
     }
-
+.card-projects
     .profile-img {
         position: relative;
 

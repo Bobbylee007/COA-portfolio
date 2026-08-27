@@ -121,7 +121,7 @@
 :root.dark-theme {
     /* dark */
     --clr-brand: #8c90ed;
-    --clr-ball-1: #9196eece;
+    --clr-ball-1: #9397e9bd;
     --clr-ball-2: #696dafaa;
     --clr-background: #282828;
     --clr-container-weak: #3d3d3d;
@@ -704,13 +704,14 @@ img {
 
 }
 
-.hero-img {
+.hero-img.pulse {
     position: relative;
     width: 336px;
     height: 336px;
     background-color: var(--clr-brand);
     border-radius: var(--rd-corner-gt);
     background-position: center;
+    animation: pulse 2s cubic-bezier(0.075, 0.82, 0.165, 1) infinite;
 
     img {
         position: absolute;
@@ -753,40 +754,20 @@ img {
     z-index: 2;
 }
 
-
-.hero-img::before {
-    position: absolute;
-    inset: -10%;
-    content: " ";
-    width: 400px;
-    height: 400px;
-    border-radius: 50%;
-    background: var(--clr-ball-1);
-    padding: 54px;
-    z-index: -1;
-    animation: spring1 1s timing-function 8ms infinite fill-mode;
-}
-@keyframes spring1 {
-    0% {
-        transform: scale(0);
+@keyframes pulse {
+    10% {
+        box-shadow: 0px 0px var(--clr-ball-1);
     }
+
+    50% {
+        box-shadow: 0px 0px 0px 32px var(--clr-ball-1), 0px 0px 0px 0px var(--clr-ball-2);
+    } 
 
     100% {
-        transform: scale(0.5);
+        box-shadow: 0px 0px 0px 32px var(--clr-ball-1), 0px 0px 0px 64px var(--clr-ball-2);
     }
 }
 
-.hero-img::after {
-    position: absolute;
-    inset: -17%;
-    content: " ";
-    width: 450px;
-    height: 450px;
-    border-radius: 50%;
-    background: var(--clr-ball-2);
-    padding: 54px;
-    z-index: -1
-}
 
 /*Caurosel*/
 .caurosel {
@@ -1404,13 +1385,15 @@ img {
             padding-block: var(--spc-rg);
             z-index: 2;
         }
-      
+        
         & .nav-links {
             max-width: 100dvw;
             background-color: var(--clr-background);
             display: block;
         }
-             
+        .navs.hideNav {
+            display: none;
+        }
 
         .bar-menu{
             width: 100%;
@@ -1567,6 +1550,7 @@ main {
         height: 235px;
         border-radius: 671.31px;
         padding: 54px;
+        margin-block-start:16px ;
 
         img {
             width: 161px;

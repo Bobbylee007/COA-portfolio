@@ -46,9 +46,10 @@ menuBtn.addEventListener("click", () => {
 navLink.forEach((link) => {
   link.addEventListener("click", () => {
     navs.classList.remove("showNav");
-    menuIcon.setAttribute("href", "./assert/icons/normal/menu.svg");
     navBar.classList.remove("navBorder"); 
-   navBar.classList.remove("active"); 
+    navBar.classList.add("hideNav");
+    navBar.classList.remove("active"); 
+
 
   });
 });

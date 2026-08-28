@@ -711,7 +711,7 @@ img {
     background-color: var(--clr-brand);
     border-radius: var(--rd-corner-gt);
     background-position: center;
-    animation: pulse 2s cubic-bezier(0.075, 0.82, 0.165, 1) infinite;
+    animation: pulse 2.5s cubic-bezier(0.075, 0.82, 0.165, 1) infinite;
 
     img {
         position: absolute;
@@ -756,15 +756,17 @@ img {
 
 @keyframes pulse {
     10% {
-        box-shadow: 0px 0px var(--clr-ball-1);
+    box-shadow: 0px 0px 0px 32px var(--clr-ball-1), 0px 0px 0px 0px var(--clr-ball-2);
     }
 
     50% {
-        box-shadow: 0px 0px 0px 32px var(--clr-ball-1), 0px 0px 0px 0px var(--clr-ball-2);
+    box-shadow: 0px 0px 0px 32px var(--clr-ball-1), 0px 0px 0px 64px var(--clr-ball-2);
     } 
-
+   75% {
+       box-shadow: 0px 0px 0px 32px var(--clr-ball-1), 0px 0px 0px 32px var(--clr-ball-2);
+   }
     100% {
-        box-shadow: 0px 0px 0px 32px var(--clr-ball-1), 0px 0px 0px 64px var(--clr-ball-2);
+        box-shadow: 0px 0px 0px 0px var(--clr-ball-1), 0px 0px 0px 0px var(--clr-ball-2);
     }
 }
 
@@ -1460,7 +1462,6 @@ main {
     width: 100dvw;
     height: auto;
     display: block;
-    padding-inline: 24px 24px;
 }
 
 
@@ -1470,7 +1471,7 @@ main {
     background: var(--clr-background);
     display: grid;
     place-items: start;
-    padding-inline: var(--spc-sm) var(--spc-sm);
+    padding-inline: 4px var(--spc-sm);
     padding-block: var(--spc-md) var(--spc-md);
     margin-inline: auto;
 }
@@ -1478,8 +1479,7 @@ main {
     display: grid;
     place-items: start;
     max-width: var(--extra-small-width);
-    margin-inline: auto;
-    padding-inline: auto;
+
 }
 .content-expand {
     display: none;
@@ -1494,6 +1494,7 @@ main {
   }
 .content-btn {
     max-width: 312px;
+    padding-inline: var(--spc-rg);
     .btn {
         max-width: 312px;
     }
@@ -1503,9 +1504,7 @@ main {
 .hero.grid-content-2 {
     display: block;
     width: 100%;
-    max-width: 312px;
-    /* margin-inline: auto; */
-    
+    max-width: 312px;   
 }
 .hero .hero-article {
     width: 100%;
@@ -1562,21 +1561,6 @@ main {
         }
     }
 
-    .hero-img::before {
-        position: absolute;
-        inset: -7%;
-        content: " ";
-        width: 270px;
-        height: 270px;
-    }
-
-    .hero-img::after {
-        position: absolute;
-        inset: -3%;
-        content: " ";
-        width: 250px;
-        height: 250px;
-    }
 
     .figma {
         position: absolute;
